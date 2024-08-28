@@ -99,10 +99,19 @@ void Marlin_NeoPixel::init() {
   #if ENABLED(NEOPIXEL_STARTUP_TEST)
     set_color_startup(adaneo1.Color(255, 0, 0, 0));  // red
     safe_delay(500);
-    set_color_startup(adaneo1.Color(0, 255, 0, 0));  // green
+    set_color_startup(adaneo1.Color(255, 255, 0, 0));  // yellow
+    safe_delay(500);
+    set_color_startup(adaneo1.Color(0, 255, 0, 0));  // Green
+    safe_delay(500);
+    set_color_startup(adaneo1.Color(0, 255, 255, 0));  // cyan
     safe_delay(500);
     set_color_startup(adaneo1.Color(0, 0, 255, 0));  // blue
     safe_delay(500);
+    set_color_startup(adaneo1.Color(255, 0, 255, 0));  // pink
+    safe_delay(500);
+    set_color_startup(adaneo.Color(255, 255, 255, 0));  // white
+    safe_delay(500);
+    
     #if HAS_WHITE_LED
       set_color_startup(adaneo1.Color(0, 0, 0, 255));  // white
       safe_delay(500);
@@ -152,12 +161,21 @@ void Marlin_NeoPixel::init() {
     show();  // initialize to all off
 
     #if ENABLED(NEOPIXEL2_STARTUP_TEST)
-      set_color_startup(adaneo.Color(255, 0, 0, 0));  // red
-      safe_delay(500);
-      set_color_startup(adaneo.Color(0, 255, 0, 0));  // green
-      safe_delay(500);
-      set_color_startup(adaneo.Color(0, 0, 255, 0));  // blue
-      safe_delay(500);
+
+          set_color_startup(adaneo1.Color(255, 0, 0, 0));  // red
+    safe_delay(500);
+    set_color_startup(adaneo.Color(255, 255, 0, 0));  // yellow
+    safe_delay(500);
+    set_color_startup(adaneo.Color(0, 255, 0, 0));  // Green
+    safe_delay(500);
+    set_color_startup(adaneo.Color(0, 255, 255, 0));  // cyan
+    safe_delay(500);
+    set_color_startup(adaneo.Color(0, 0, 255, 0));  // blue
+    safe_delay(500);
+    set_color_startup(adaneo.Color(255, 0, 255, 0));  // pink
+    safe_delay(500);
+    set_color_startup(adaneo.Color(255, 255, 255, 0));  // white
+    safe_delay(500);
       #if HAS_WHITE_LED2
         set_color_startup(adaneo.Color(0, 0, 0, 255));  // white
         safe_delay(500);
